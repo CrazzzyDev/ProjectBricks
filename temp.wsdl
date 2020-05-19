@@ -1,0 +1,1084 @@
+<WL5G3N2:definitions xmlns="" xmlns:WL5G3N0="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:WL5G3N1="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N3="http://oracle.e1.bssv.JP57PWS1/" xmlns:WL5G3N4="java:oracle.e1.bssvfoundation.exception" xmlns:WL5G3N5="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" name="PSRWYSIWYGDefinitions" targetNamespace="http://oracle.e1.bssv.JP57PWS1/">
+<WL5G3N0:Policy WL5G3N1:Id="Wssp1.2-2007-Https-UsernameToken-Plain.xml">
+<sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+<wsp:Policy>
+<sp:TransportToken>
+<wsp:Policy>
+<sp:HttpsToken/>
+</wsp:Policy>
+</sp:TransportToken>
+<sp:AlgorithmSuite>
+<wsp:Policy>
+<sp:Basic256/>
+</wsp:Policy>
+</sp:AlgorithmSuite>
+<sp:Layout>
+<wsp:Policy>
+<sp:Lax/>
+</wsp:Policy>
+</sp:Layout>
+<sp:IncludeTimestamp/>
+</wsp:Policy>
+</sp:TransportBinding>
+<sp:SupportingTokens xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+<wsp:Policy>
+<sp:UsernameToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+<wsp:Policy>
+<sp:WssUsernameToken10/>
+</wsp:Policy>
+</sp:UsernameToken>
+</wsp:Policy>
+</sp:SupportingTokens>
+</WL5G3N0:Policy>
+<wsp:UsingPolicy WL5G3N2:Required="true"/>
+<WL5G3N2:types>
+<xs:schema xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://oracle.e1.bssv.JP57PWS1/" xmlns:WL5G3N2="java:oracle.e1.bssvfoundation.exception" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="java:oracle.e1.bssvfoundation.base">
+<xs:import namespace="java:oracle.e1.bssvfoundation.util"/>
+<xs:complexType name="MessageValueObject">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element xmlns:java1="java:oracle.e1.bssvfoundation.util" minOccurs="1" name="E1MessageList" nillable="true" type="java1:E1MessageList"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="ValueObject"/>
+</xs:schema>
+<xs:schema xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://oracle.e1.bssv.JP57PWS1/" xmlns:WL5G3N2="java:oracle.e1.bssvfoundation.exception" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="java:oracle.e1.bssv.JP57PWS1.valueobject">
+<xs:import namespace="java:oracle.e1.bssvfoundation.base"/>
+<xs:complexType name="LanguageAlternativeSetReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="State" nillable="false" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="GenericTextSetParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="SzComments_CMTS" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="MnUniqueKeyIDInternal_UKID" nillable="false" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldWeightGetParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="ItemNumberShort" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Version" nillable="true" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="ItemGetParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="ItemNumberShort" nillable="true" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldWeightSetReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="State" nillable="false" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="LanguageAlternativeSetParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="ItemNumber" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Version" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Alternative1" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Alternative2" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="UserID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="ProgrameID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="WorkStationID" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="UDCListReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element xmlns:java1="java:oracle.e1.bssv.JP57PWS1.valueobject" maxOccurs="unbounded" minOccurs="0" name="UDCList" nillable="true" type="java1:UDCListReturnType"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="UDCListReturnType">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="Code" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Description" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldDefinitionParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="ItemNumberShort" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Version" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Tab" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="DictionaryIgnoreListParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject"/>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="MacroDepartmentListParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="Department" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="MacroCodeListParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="Code" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="MacroUserListReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element xmlns:java1="java:oracle.e1.bssv.JP57PWS1.valueobject" maxOccurs="unbounded" minOccurs="0" name="MacroUserList" nillable="true" type="java1:MacroUserListReturnType"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="MacroUserListReturnType">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="Code" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Text" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldDimensionsSetParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="PreDimensionPhrase" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="CatalogueDimensionUnitOf" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="PostDimensionPhrase" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="UserID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="ProgramID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="WorkStationID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="ItemNumberShort" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Version" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="CatalogueHeight" nillable="false" type="xs:float"/>
+<xs:element minOccurs="1" name="CatalogueWidth" nillable="false" type="xs:float"/>
+<xs:element minOccurs="1" name="CatalogueDepth" nillable="false" type="xs:float"/>
+<xs:element minOccurs="1" name="Type" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Language" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="MacroCodeListReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element xmlns:java1="java:oracle.e1.bssv.JP57PWS1.valueobject" maxOccurs="unbounded" minOccurs="0" name="MacroCodeList" nillable="true" type="java1:MacroCodeListReturnType"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="MacroCodeListReturnType">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="Text" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="MacroUserListParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="User" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="DictionaryCheckReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="Exists" nillable="false" type="xs:boolean"/>
+<xs:element minOccurs="1" name="CalText" nillable="true" type="xs:dateTime"/>
+<xs:element minOccurs="1" name="Dt" nillable="true" type="xs:dateTime"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldTextSetReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="State" nillable="false" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldTextDeleteParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="ItemNumber" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Version" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Type" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Language" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldDimensionsGetReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="PreDimensionPhrase" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="CatalogueDimensionUnitOf" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="PostDimensionPhrase" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="CatalogueHeight" nillable="false" type="xs:float"/>
+<xs:element minOccurs="1" name="CatalogueWidth" nillable="false" type="xs:float"/>
+<xs:element minOccurs="1" name="CatalogueDepth" nillable="false" type="xs:float"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldTextGetParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="ItemNumber" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Version" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Type" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Language" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="LanguageAlternativeGetParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="ItemNumber" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Version" nillable="true" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="MacroDepartmentListReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element xmlns:java1="java:oracle.e1.bssv.JP57PWS1.valueobject" maxOccurs="unbounded" minOccurs="0" name="MacroDepartmentList" nillable="true" type="java1:MacroDepartmentListReturnType"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="MacroDepartmentListReturnType">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="Code" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Text" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="ItemGetReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="Identifier2ndItem" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldTextSetParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="ItemNumber" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Version" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Type" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Language" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Text" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="UserID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="WorkStationID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="ProgramID" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="GenericTextSetReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="State" nillable="false" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="MacroGlobalListReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element xmlns:java1="java:oracle.e1.bssv.JP57PWS1.valueobject" maxOccurs="unbounded" minOccurs="0" name="MacroGlobalList" nillable="true" type="java1:MacroGlobalListReturnType"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="MacroGlobalListReturnType">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="Code" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Text" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldTextDeleteReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject"/>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="MacroGlobalListParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject"/>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldWeightGetReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="PreWeightPhrase" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="CatalogueWeightUOM" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="PostWeightPhrase" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="CatalogueWeight" nillable="false" type="xs:float"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldWeightSetParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="ItemNumberShort" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Version" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="PreWeightPhrase" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="CatalogueWeight" nillable="false" type="xs:float"/>
+<xs:element minOccurs="1" name="CatalogueWeightUOM" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="PostWeightPhrase" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="UserID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="ProgramID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="WorkStationID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Type" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Language" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldDimensionsSetReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="State" nillable="false" type="xs:boolean"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="DictionaryCheckParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="DictionaryString" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldDimensionsGetParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="ItemNumberShort" nillable="true" type="xs:int"/>
+<xs:element minOccurs="1" name="Version" nillable="true" type="xs:int"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="GenericTextGetReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="SzComments_CMTS" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="DictionaryIgnoreListReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element xmlns:java1="java:oracle.e1.bssv.JP57PWS1.valueobject" maxOccurs="unbounded" minOccurs="0" name="DictionaryIgnoreList" nillable="true" type="java1:DictionaryIgnoreListReturnType"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="DictionaryIgnoreListReturnType">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="IgnoreWord" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="GenericTextGetParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="IntUniqueKeyIDInternal_UKID" nillable="false" type="xs:long"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldTextGetReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="Text" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="UDCListParameters">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="ProductCode" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="UserDefinedCode" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldDefinitionReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element xmlns:java1="java:oracle.e1.bssv.JP57PWS1.valueobject" maxOccurs="unbounded" minOccurs="0" name="FieldDefinitioList" nillable="true" type="java1:FieldDefinitionReturnType"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="FieldDefinitionReturnType">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:ValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="State" nillable="false" type="xs:boolean"/>
+<xs:element minOccurs="1" name="Name" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Type" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="HandlingCode" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="LanguageAlternativeGetReturn">
+<xs:complexContent>
+<xs:extension xmlns:java="java:oracle.e1.bssvfoundation.base" base="java:MessageValueObject">
+<xs:sequence>
+<xs:element minOccurs="1" name="Alternative1" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Alternative2" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>
+<xs:schema xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://oracle.e1.bssv.JP57PWS1/" xmlns:WL5G3N2="java:oracle.e1.bssvfoundation.exception" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://oracle.e1.bssv.JP57PWS1/">
+<xs:import namespace="java:oracle.e1.bssv.JP57PWS1.valueobject"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="LanguageAlternativeSetResponseElement" type="java:LanguageAlternativeSetReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="GenericTextSetElement" type="java:GenericTextSetParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="ItemGetElement" type="java:ItemGetParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldWeightSetResponseElement" type="java:FieldWeightSetReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="MacroUserListResponseElement" type="java:MacroUserListReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="MacroDepartmentListElement" type="java:MacroDepartmentListParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldDimensionsSetElement" type="java:FieldDimensionsSetParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="MacroUserListElement" type="java:MacroUserListParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldTextDeleteElement" type="java:FieldTextDeleteParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldTextGetElement" type="java:FieldTextGetParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="LanguageAlternativeGetElement" type="java:LanguageAlternativeGetParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="MacroDepartmentListResponseElement" type="java:MacroDepartmentListReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="GenericTextSetResponseElement" type="java:GenericTextSetReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="MacroGlobalListResponseElement" type="java:MacroGlobalListReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="GenericTextGetResponseElement" type="java:GenericTextGetReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldDimensionsGetElement" type="java:FieldDimensionsGetParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldTextGetResponseElement" type="java:FieldTextGetReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="GenericTextGetElement" type="java:GenericTextGetParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="UDCListElement" type="java:UDCListParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldDefinitionResponseElement" type="java:FieldDefinitionReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldWeightGetElement" type="java:FieldWeightGetParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="LanguageAlternativeSetElement" type="java:LanguageAlternativeSetParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="UDCListResponseElement" type="java:UDCListReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldDefinitionElement" type="java:FieldDefinitionParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="MacroCodeListElement" type="java:MacroCodeListParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="DictionaryIgnoreListElement" type="java:DictionaryIgnoreListParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="MacroCodeListResponseElement" type="java:MacroCodeListReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="DictionaryCheckResponseElement" type="java:DictionaryCheckReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldTextSetResponseElement" type="java:FieldTextSetReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldDimensionsGetResponseElement" type="java:FieldDimensionsGetReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="ItemGetResponseElement" type="java:ItemGetReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldTextSetElement" type="java:FieldTextSetParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldTextDeleteResponseElement" type="java:FieldTextDeleteReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="MacroGlobalListElement" type="java:MacroGlobalListParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldWeightGetResponseElement" type="java:FieldWeightGetReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldWeightSetElement" type="java:FieldWeightSetParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="FieldDimensionsSetResponseElement" type="java:FieldDimensionsSetReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="DictionaryCheckElement" type="java:DictionaryCheckParameters"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="DictionaryIgnoreListResponseElement" type="java:DictionaryIgnoreListReturn"/>
+<xs:element xmlns:java="java:oracle.e1.bssv.JP57PWS1.valueobject" name="LanguageAlternativeGetResponseElement" type="java:LanguageAlternativeGetReturn"/>
+</xs:schema>
+<xs:schema xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://oracle.e1.bssv.JP57PWS1/" xmlns:WL5G3N2="java:oracle.e1.bssvfoundation.exception" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="java:oracle.e1.bssvfoundation.util">
+<xs:complexType name="E1MessageList">
+<xs:sequence>
+<xs:element xmlns:java="java:oracle.e1.bssvfoundation.util" maxOccurs="unbounded" minOccurs="0" name="E1Messages" nillable="true" type="java:E1Message"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="E1Message">
+<xs:sequence>
+<xs:element minOccurs="1" name="MessagePrefix" nillable="true" type="xs:string"/>
+<xs:element minOccurs="1" name="Message" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+<xs:schema xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://oracle.e1.bssv.JP57PWS1/" xmlns:WL5G3N2="java:oracle.e1.bssvfoundation.exception" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="java:oracle.e1.bssvfoundation.exception">
+<xs:complexType name="BusinessServiceException">
+<xs:annotation>
+<xs:documentation>
+The base Exception class for Published Business Services. All Published Business Service exceptions must extend from this class.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element minOccurs="1" name="RequestID" nillable="true" type="xs:string">
+<xs:annotation>
+<xs:documentation>
+Public accessor methods are necessary for Web Services calls, but this method should not be used by application development.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element minOccurs="1" name="Message" nillable="true" type="xs:string">
+<xs:annotation>
+<xs:documentation>
+Overrides getMessage from super class. Returns the exception message.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element xmlns:java="java:oracle.e1.bssvfoundation.exception" name="BusinessServiceException" type="java:BusinessServiceException"/>
+</xs:schema>
+</WL5G3N2:types>
+<WL5G3N2:message name="FieldTextSet">
+<WL5G3N2:part element="WL5G3N3:FieldTextSetElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldTextSetResponse">
+<WL5G3N2:part element="WL5G3N3:FieldTextSetResponseElement" name="FieldTextSetResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="BusinessServiceException">
+<WL5G3N2:part element="WL5G3N4:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldTextDelete">
+<WL5G3N2:part element="WL5G3N3:FieldTextDeleteElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldTextDeleteResponse">
+<WL5G3N2:part element="WL5G3N3:FieldTextDeleteResponseElement" name="FieldTextDeleteResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="MacroCodeList">
+<WL5G3N2:part element="WL5G3N3:MacroCodeListElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="MacroCodeListResponse">
+<WL5G3N2:part element="WL5G3N3:MacroCodeListResponseElement" name="MacroCodeListResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="LanguageAlternativeSet">
+<WL5G3N2:part element="WL5G3N3:LanguageAlternativeSetElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="LanguageAlternativeSetResponse">
+<WL5G3N2:part element="WL5G3N3:LanguageAlternativeSetResponseElement" name="LanguageAlternativeSetResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="GenericTextGet">
+<WL5G3N2:part element="WL5G3N3:GenericTextGetElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="GenericTextGetResponse">
+<WL5G3N2:part element="WL5G3N3:GenericTextGetResponseElement" name="GenericTextGetResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldTextGet">
+<WL5G3N2:part element="WL5G3N3:FieldTextGetElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldTextGetResponse">
+<WL5G3N2:part element="WL5G3N3:FieldTextGetResponseElement" name="FieldTextGetResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="LanguageAlternativeGet">
+<WL5G3N2:part element="WL5G3N3:LanguageAlternativeGetElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="LanguageAlternativeGetResponse">
+<WL5G3N2:part element="WL5G3N3:LanguageAlternativeGetResponseElement" name="LanguageAlternativeGetResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="MacroUserList">
+<WL5G3N2:part element="WL5G3N3:MacroUserListElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="MacroUserListResponse">
+<WL5G3N2:part element="WL5G3N3:MacroUserListResponseElement" name="MacroUserListResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="GenericTextSet">
+<WL5G3N2:part element="WL5G3N3:GenericTextSetElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="GenericTextSetResponse">
+<WL5G3N2:part element="WL5G3N3:GenericTextSetResponseElement" name="GenericTextSetResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="UDCList">
+<WL5G3N2:part element="WL5G3N3:UDCListElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="UDCListResponse">
+<WL5G3N2:part element="WL5G3N3:UDCListResponseElement" name="UDCListResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldDefinition">
+<WL5G3N2:part element="WL5G3N3:FieldDefinitionElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldDefinitionResponse">
+<WL5G3N2:part element="WL5G3N3:FieldDefinitionResponseElement" name="FieldDefinitionResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldDimensionsSet">
+<WL5G3N2:part element="WL5G3N3:FieldDimensionsSetElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldDimensionsSetResponse">
+<WL5G3N2:part element="WL5G3N3:FieldDimensionsSetResponseElement" name="FieldDimensionsSetResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldWeightSet">
+<WL5G3N2:part element="WL5G3N3:FieldWeightSetElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldWeightSetResponse">
+<WL5G3N2:part element="WL5G3N3:FieldWeightSetResponseElement" name="FieldWeightSetResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="ItemGet">
+<WL5G3N2:part element="WL5G3N3:ItemGetElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="ItemGetResponse">
+<WL5G3N2:part element="WL5G3N3:ItemGetResponseElement" name="ItemGetResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="DictionaryCheck">
+<WL5G3N2:part element="WL5G3N3:DictionaryCheckElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="DictionaryCheckResponse">
+<WL5G3N2:part element="WL5G3N3:DictionaryCheckResponseElement" name="DictionaryCheckResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="MacroGlobalList">
+<WL5G3N2:part element="WL5G3N3:MacroGlobalListElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="MacroGlobalListResponse">
+<WL5G3N2:part element="WL5G3N3:MacroGlobalListResponseElement" name="MacroGlobalListResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="MacroDepartmentList">
+<WL5G3N2:part element="WL5G3N3:MacroDepartmentListElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="MacroDepartmentListResponse">
+<WL5G3N2:part element="WL5G3N3:MacroDepartmentListResponseElement" name="MacroDepartmentListResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldWeightGet">
+<WL5G3N2:part element="WL5G3N3:FieldWeightGetElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldWeightGetResponse">
+<WL5G3N2:part element="WL5G3N3:FieldWeightGetResponseElement" name="FieldWeightGetResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldDimensionsGet">
+<WL5G3N2:part element="WL5G3N3:FieldDimensionsGetElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="FieldDimensionsGetResponse">
+<WL5G3N2:part element="WL5G3N3:FieldDimensionsGetResponseElement" name="FieldDimensionsGetResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="DictionaryIgnoreList">
+<WL5G3N2:part element="WL5G3N3:DictionaryIgnoreListElement" name="inputV0"/>
+</WL5G3N2:message>
+<WL5G3N2:message name="DictionaryIgnoreListResponse">
+<WL5G3N2:part element="WL5G3N3:DictionaryIgnoreListResponseElement" name="DictionaryIgnoreListResponseElement"/>
+</WL5G3N2:message>
+<WL5G3N2:portType name="Oracle_E1_SBF_JWS_PkgBldFile_PSRWYSIWYG" wsp:PolicyURIs="#Wssp1.2-2007-Https-UsernameToken-Plain.xml">
+<WL5G3N2:operation name="FieldTextSet" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:FieldTextSet"/>
+<WL5G3N2:output message="WL5G3N3:FieldTextSetResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldTextDelete" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:FieldTextDelete"/>
+<WL5G3N2:output message="WL5G3N3:FieldTextDeleteResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="MacroCodeList" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:MacroCodeList"/>
+<WL5G3N2:output message="WL5G3N3:MacroCodeListResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="LanguageAlternativeSet" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:LanguageAlternativeSet"/>
+<WL5G3N2:output message="WL5G3N3:LanguageAlternativeSetResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="GenericTextGet" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:GenericTextGet"/>
+<WL5G3N2:output message="WL5G3N3:GenericTextGetResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldTextGet" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:FieldTextGet"/>
+<WL5G3N2:output message="WL5G3N3:FieldTextGetResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="LanguageAlternativeGet" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:LanguageAlternativeGet"/>
+<WL5G3N2:output message="WL5G3N3:LanguageAlternativeGetResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="MacroUserList" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:MacroUserList"/>
+<WL5G3N2:output message="WL5G3N3:MacroUserListResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="GenericTextSet" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:GenericTextSet"/>
+<WL5G3N2:output message="WL5G3N3:GenericTextSetResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="UDCList" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:UDCList"/>
+<WL5G3N2:output message="WL5G3N3:UDCListResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldDefinition" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:FieldDefinition"/>
+<WL5G3N2:output message="WL5G3N3:FieldDefinitionResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldDimensionsSet" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:FieldDimensionsSet"/>
+<WL5G3N2:output message="WL5G3N3:FieldDimensionsSetResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldWeightSet" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:FieldWeightSet"/>
+<WL5G3N2:output message="WL5G3N3:FieldWeightSetResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="ItemGet" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:ItemGet"/>
+<WL5G3N2:output message="WL5G3N3:ItemGetResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="DictionaryCheck" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:DictionaryCheck"/>
+<WL5G3N2:output message="WL5G3N3:DictionaryCheckResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="MacroGlobalList" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:MacroGlobalList"/>
+<WL5G3N2:output message="WL5G3N3:MacroGlobalListResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="MacroDepartmentList" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:MacroDepartmentList"/>
+<WL5G3N2:output message="WL5G3N3:MacroDepartmentListResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldWeightGet" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:FieldWeightGet"/>
+<WL5G3N2:output message="WL5G3N3:FieldWeightGetResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldDimensionsGet" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:FieldDimensionsGet"/>
+<WL5G3N2:output message="WL5G3N3:FieldDimensionsGetResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="DictionaryIgnoreList" parameterOrder="inputV0">
+<WL5G3N2:input message="WL5G3N3:DictionaryIgnoreList"/>
+<WL5G3N2:output message="WL5G3N3:DictionaryIgnoreListResponse"/>
+<WL5G3N2:fault message="WL5G3N3:BusinessServiceException" name="BusinessServiceException"/>
+</WL5G3N2:operation>
+</WL5G3N2:portType>
+<WL5G3N2:binding name="PSRWYSIWYGSoapBinding" type="WL5G3N3:Oracle_E1_SBF_JWS_PkgBldFile_PSRWYSIWYG">
+<WL5G3N5:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<WL5G3N2:operation name="FieldTextSet">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//FieldTextSet" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="FieldTextSetResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldTextDelete">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//FieldTextDelete" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="FieldTextDeleteResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="MacroCodeList">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//MacroCodeList" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="MacroCodeListResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="LanguageAlternativeSet">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//LanguageAlternativeSet" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="LanguageAlternativeSetResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="GenericTextGet">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//GenericTextGet" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="GenericTextGetResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldTextGet">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//FieldTextGet" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="FieldTextGetResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="LanguageAlternativeGet">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//LanguageAlternativeGet" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="LanguageAlternativeGetResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="MacroUserList">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//MacroUserList" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="MacroUserListResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="GenericTextSet">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//GenericTextSet" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="GenericTextSetResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="UDCList">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//UDCList" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="UDCListResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldDefinition">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//FieldDefinition" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="FieldDefinitionResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldDimensionsSet">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//FieldDimensionsSet" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="FieldDimensionsSetResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldWeightSet">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//FieldWeightSet" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="FieldWeightSetResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="ItemGet">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//ItemGet" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="ItemGetResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="DictionaryCheck">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//DictionaryCheck" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="DictionaryCheckResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="MacroGlobalList">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//MacroGlobalList" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="MacroGlobalListResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="MacroDepartmentList">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//MacroDepartmentList" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="MacroDepartmentListResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldWeightGet">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//FieldWeightGet" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="FieldWeightGetResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="FieldDimensionsGet">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//FieldDimensionsGet" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="FieldDimensionsGetResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+<WL5G3N2:operation name="DictionaryIgnoreList">
+<WL5G3N5:operation soapAction="http://oracle.e1.bssv.JP57PWS1//DictionaryIgnoreList" style="document"/>
+<WL5G3N2:input>
+<WL5G3N5:body parts="inputV0" use="literal"/>
+</WL5G3N2:input>
+<WL5G3N2:output>
+<WL5G3N5:body parts="DictionaryIgnoreListResponseElement" use="literal"/>
+</WL5G3N2:output>
+<WL5G3N2:fault name="BusinessServiceException">
+<WL5G3N5:fault name="BusinessServiceException" use="literal"/>
+</WL5G3N2:fault>
+</WL5G3N2:operation>
+</WL5G3N2:binding>
+<WL5G3N2:service name="PSRWYSIWYG">
+<WL5G3N2:port binding="WL5G3N3:PSRWYSIWYGSoapBinding" name="PSRWYSIWYGHttpPort">
+<WL5G3N5:address location="https://10.100.72.75:2276/UA910/PSRWYSIWYG"/>
+</WL5G3N2:port>
+</WL5G3N2:service>
+</WL5G3N2:definitions>
